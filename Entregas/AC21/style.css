@@ -5,9 +5,11 @@ body {
     padding: 20px;
     background-color: #f0f0f0;
 }
+
 h1, h2 {
     color: #333;
 }
+
 .container {
     display: flex;
     justify-content: space-around;
@@ -17,13 +19,23 @@ h1, h2 {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     margin-bottom: 30px;
 }
+
 .item {
     text-align: center;
 }
+
+img {
+    max-width: 100%; 
+    height: auto;    
+    width: 200px;    
+    border: 1px solid #ccc;
+    margin: 0 auto;
+}
+
 svg {
     border: 1px solid #ccc;
 }
-/* Style for the bitmap placeholders */
+
 .bitmap-placeholder {
     width: 200px;
     height: 200px;
@@ -35,6 +47,7 @@ svg {
     color: #555;
     margin: 0 auto;
 }
+
 .comparison-text {
     background: white;
     padding: 20px;
