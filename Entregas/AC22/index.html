@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor Orbital - AC22</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="player-container">
+        <h1>Reproductor Orbital</h1>
+        
+        <audio id="mainAudio">
+            <source src="assets/audio1.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+
+        <div style="display: flex; align-items: center; justify-content: space-between; background: #eee; padding: 10px; border-radius: 50px;">
+            <span id="currentTimeDisplay">0:00</span>
+            <input type="range" id="progressBar" value="0" max="100" style="margin: 0 15px;">
+            <span id="durationDisplay">0:00</span>
+        </div>
+
+        <div class="controls-grid">
+            <button onclick="playAudio()">Play</button>
+            <button onclick="pauseAudio()">Pausa</button>
+            <button onclick="changeVolume(0.1)">Volum +</button>
+            <button onclick="changeVolume(-0.1)">Volum -</button>
+            
+            <button onclick="skipTime(5)">+5 segons</button>
+            <button onclick="skipTime(-5)">-5 segons</button>
+            <button onclick="changeSpeed(0.25)">Velocitat +</button>
+            <button onclick="changeSpeed(-0.25)">Velocitat -</button>
+            
+            <button onclick="toggleMute()" style="grid-column: span 2;">Mute/Unmute</button>
+        </div>
+
+        <div class="status-display">
+            Temps actual: <span id="txtSeconds">0</span> segons [cite: 26]
+        </div>
+    </div>
+
+    <hr style="width: 80%; margin: 20px 0;">
+
+    <h2>Comparativa de Formatos y Codificaciones</h2>
+    <div class="audio-gallery">
+        <div class="audio-card">
+            <h3>1. MP3 (Estándar)</h3>
+            <p>Formato con pérdida. Alta compatibilidad.</p>
+            <audio controls src="assets/audio1.mp3"></audio>
+        </div>
+        <div class="audio-card">
+            <h3>2. WAV (Sin compresión)</h3>
+            <p>Audio crudo, gran tamaño, máxima calidad.</p>
+            <audio controls src="assets/audio2.wav"></audio>
+        </div>
+        <div class="audio-card">
+            <h3>3. OGG Vorbis</h3>
+            <p>Open source, eficiente para web.</p>
+            <audio controls src="assets/audio3.ogg"></audio>
+        </div>
+        <div class="audio-card">
+            <h3>4. FLAC</h3>
+            <p>Compresión sin pérdida de calidad.</p>
+            <audio controls src="assets/audio4.flac"></audio>
+        </div>
+        <div class="audio-card">
+            <h3>5. OPUS</h3>
+            <p>Códec moderno, latencia ultra baja y alta calidad.</p>
+            <audio controls src="assets/audio5.opus"></audio>
+        </div>
+        <div class="audio-card">
+            <h3>6. MP3 (Baja Calidad)</h3>
+            <p>Bitrate 64kbps para comparar degradación.</p>
+            <audio controls src="assets/audio6.mp3"></audio>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <h2>Tabla de Características de Audio</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Formato</th>
+                    <th>Tipo de Compresión</th>
+                    <th>Peso del archivo (aprox)</th>
+                    <th>Idoneidad / Caso de Uso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>MP3</td>
+                    <td>Con pérdida (Lossy)</td>
+                    <td>Bajo</td>
+                    <td>Estándar web, música en streaming, podcasts. Compatible con todo.</td>
+                </tr>
+                <tr>
+                    <td>WAV</td>
+                    <td>Sin compresión (Lossless)</td>
+                    <td>Muy Alto</td>
+                    <td>Edición profesional, masterización, efectos de sonido cortos donde la calidad es vital.</td>
+                </tr>
+                <tr>
+                    <td>OGG</td>
+                    <td>Con pérdida (Variable)</td>
+                    <td>Bajo (Eficiente)</td>
+                    <td>Juegos web, aplicaciones open source. Buena relación calidad/peso.</td>
+                </tr>
+                <tr>
+                    <td>FLAC</td>
+                    <td>Compresión sin pérdida</td>
+                    <td>Medio-Alto</td>
+                    <td>Audiófilos, archivo de audio histórico, streaming Hi-Fi.</td>
+                </tr>
+                <tr>
+                    <td>OPUS</td>
+                    <td>Con pérdida (Híbrido)</td>
+                    <td>Muy Bajo</td>
+                    <td>VoIP (Discord, WhatsApp), streaming tiempo real, reemplazo moderno de Vorbis/Speex.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

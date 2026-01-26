@@ -1,0 +1,101 @@
+:root {    
+    --primary-color: #333;
+    --accent-color: #e0e0e0;
+    --bg-color: #f4f4f4;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1, h2 {
+    color: var(--primary-color);
+    text-align: center;
+}
+/* Reproductor Orbital (Custom Player) */
+.player-container {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+.controls-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+button {
+    background-color: var(--accent-color);
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+button:hover {
+    background-color: #d0d0d0;
+}
+button:active {
+    background-color: #b0b0b0;
+}
+#progressBar {
+    width: 100%;
+    margin: 15px 0;
+    cursor: pointer;
+}
+.status-display {
+    margin-top: 15px;
+    font-style: italic;
+}
+/* Grid de 6 Formatos de Audio  */
+.audio-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 40px;
+}
+.audio-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+/* Tabla de Características  */
+.table-container {
+    width: 100%;
+    max-width: 1000px;
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+th {
+    background-color: var(--primary-color);
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
